@@ -2,7 +2,14 @@ PYTHON_DIR := python
 SCRIPT     := quasicrystal_hamiltonian.py
 OUTPUT     := ab_hamiltonian_rainbow_wide_glow.svg
 
-.PHONY: all install build run clean
+.PHONY: help all install build run clean
+
+.DEFAULT_GOAL := help
+
+## help: list the available targets
+help:
+	@echo "Available targets:"
+	@grep -E '^## [a-z]+:' $(MAKEFILE_LIST) | sed 's/^## /  /'
 
 all: run
 

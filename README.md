@@ -54,8 +54,8 @@ The simplest path is the `Makefile` in the repo root:
 make run      # install pinned deps if needed, then generate the SVG
 ```
 
-Other targets: `make install` (set up the virtualenv only) and `make clean`
-(remove generated output).
+Run `make` (or `make help`) to list all targets. Other targets: `make install`
+(set up the virtualenv only) and `make clean` (remove generated output).
 
 Or run `pipenv` directly from `python/`:
 
