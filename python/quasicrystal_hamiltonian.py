@@ -449,7 +449,9 @@ def main(out='ab_hamiltonian_rainbow_wide_glow.svg'):
     def poly(run):
         pts = [XY[run[0]]] + [XY[(i + 1) % nb] for i in run]
         return ' '.join('%.3f,%.3f' % (x, -y) for x, y in pts)
-    S = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="%.3f %.3f %.3f %.3f" width="1600">'
+    S = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="%.3f %.3f %.3f %.3f" '
+         'width="100%%" height="100%%" preserveAspectRatio="xMidYMid meet" '
+         'style="background:#000;display:block">'
          % (x0, -y1, Wu, Hu),
          '<rect x="%.3f" y="%.3f" width="%.3f" height="%.3f" fill="black"/>' % (x0, -y1, Wu, Hu)]
     for w, cf in ((0.52, colr), (0.30, lambda g: bright(colr(g)))):
