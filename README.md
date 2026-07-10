@@ -44,9 +44,20 @@ free of floating-point error. The pipeline:
 
 ## Running it
 
-Requires **Python 3.13** and [`pipenv`](https://pipenv.pypa.io/). The
+Requires **Python 3.13**, [`pipenv`](https://pipenv.pypa.io/), and `make`. The
 `Pipfile`/`Pipfile.lock` in `python/` pin [`networkx`](https://networkx.org/), so
-installing needs no package name:
+installing needs no package name.
+
+The simplest path is the `Makefile` in the repo root:
+
+```bash
+make run      # install pinned deps if needed, then generate the SVG
+```
+
+Other targets: `make install` (set up the virtualenv only) and `make clean`
+(remove generated output).
+
+Or run `pipenv` directly from `python/`:
 
 ```bash
 cd python
