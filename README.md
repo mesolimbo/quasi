@@ -44,18 +44,21 @@ free of floating-point error. The pipeline:
 
 ## Running it
 
-Requires **Python 3.9+** and [`networkx`](https://networkx.org/).
+Requires **Python 3.13** and [`pipenv`](https://pipenv.pypa.io/). The
+`Pipfile`/`Pipfile.lock` in `python/` pin [`networkx`](https://networkx.org/), so
+installing needs no package name:
 
 ```bash
-pipenv install networkx
-pipenv run python python/quasicrystal_hamiltonian.py
+cd python
+pipenv install
+pipenv run python quasicrystal_hamiltonian.py
 ```
 
 This writes `ab_hamiltonian_rainbow_wide_glow.svg` to the working directory. You
 can pass an alternate output filename as the first argument:
 
 ```bash
-pipenv run python python/quasicrystal_hamiltonian.py my_output.svg
+pipenv run python quasicrystal_hamiltonian.py my_output.svg
 ```
 
 Runtime is a few minutes with a peak memory footprint of roughly 2 GB.
